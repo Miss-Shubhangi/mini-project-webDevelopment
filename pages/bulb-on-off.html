@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Off/On bulb</title>
+    <style>
+        body{
+            background-color: #808080;
+        }
+        h3{
+            font-size: 70px;
+            
+        }
+        .container{
+            display: block;
+            text-align: center;
+           justify-content: center;
+            background-color: #d6d6c2;
+            width: 600px;
+            padding: 20px auto;
+            margin:10px auto;
+            border-radius: 40px;
+        }
+        #bulb-img{
+            padding: 10px auto;
+        }
+        .btn{
+            padding: 10px  30px;
+            margin: 40px 40px;
+            border-radius: 30px;
+            cursor: pointer;
+            border: none;
+
+        }
+        .on-btn{
+            background-color: #FAD961;
+            background-image: linear-gradient(90deg, #FAD961 57%, #F76B1C 100%);
+
+        }
+        .off-btn{
+            background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+            background-blend-mode: multiply,multiply;
+        }
+        .btn:hover{
+            transform: scale(1.5);
+        }
+        @media screen and (max-width:760) {
+            .container{
+                width: 80%;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Bulb ON/OFF</h3>
+        <img src="./../icons/off-bulb.png" id="bulb-img" height="300px" alt="bulb">
+         <br><br> <br> 
+        <button type="button"  id="on-state" class="on-btn btn" onclick="onBulb()">ON </button>
+        <button type="button" id="off-state" class="off-btn  btn" onclick="offBulb()">OFF</button>
+    </div>
+    <script>
+       function onBulb(){
+        let onstate= document.getElementById("bulb-img");
+        onstate.src="./../icons/on-bulb.png";
+    }
+    function offBulb(){
+        let offstate= document.getElementById("bulb-img");
+        offstate.src="./../icons/off-bulb.png";
+    }
+    </script>
+</body>
+</html>
