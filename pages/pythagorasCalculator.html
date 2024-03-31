@@ -54,7 +54,7 @@
             <input type="text" class="input-section" placeholder="Enter side1" id="side1"> <br> <br>
             <input type="text" class="input-section" placeholder="Enter side2" id="side2">  <br><br>
             
-            <p class="calculate-answer" id="hypocalc">Hypotenuse : </p>
+            <p class="calculate-answer" id="calc-hypo">Hypotenuse : </p>
             <br> 
             <button class="btn calculate-btn" type="button" onclick="calculatehypo()">Calculate</button> <br><br>
             <button class="btn reset-btn" type="button" onclick="reset()">Reset</button>
@@ -66,17 +66,16 @@
             let num2=parseInt(document.getElementById("side2").value);
             let hyposqr= ((num1*num1)+(num2*num2));
             let hypo =parseInt(Math.sqrt(hyposqr));
-            let ans=document.getElementById("hypocalc");
-            ans.innerText=`Hypotenuse :${hypo}`;
+            let answer=document.getElementById("calc-hypo");
+            answer.innerHTML=`Hypotenuse :${hypo}`;
         }
         function reset(){
             let num1=document.getElementById("side1")
             let num2=document.getElementById("side2")
-           
+            let answer=document.getElementById("calc-hypo");
              num1.innerText="";
             num2.innerText="";
-            let ans=document.getElementById("hypocalc");
-            ans.innerText="";
+            answer.innerText="";
         }
     </script>
 </body>
