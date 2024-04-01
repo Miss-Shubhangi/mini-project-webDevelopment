@@ -4,12 +4,50 @@
     
     <title>Document</title>
     <style>
-      
+      .container{
+        justify-content: center;
+        margin: 10px auto;
+    
+      }
+      .img{
+        border-radius: 20px;
+      }
+      .img-decor{
+        cursor: pointer;
+      }
+     .dark-theme{
+        background-color: black;
+        color: white;
+     }
+     .light-theme{
+        background-color: white;
+        color:black
+     }
+     .mode{
+        border:2px solid black;
+        padding: 7px;
+        border-radius: 10px;
+     }
+     .lightImage{
+        background-color: gray;
+     }
+     .darkImage{
+        background-color: rgb(255, 255, 255);
+     }
+    #decoration{
+        cursor: pointer;
+        text-decoration: none;
+    
+    }
     </style>
 </head>
-<body>
+<body id="body" >
     <div class="container">
+    
+        <img src="./../icons/light-moon.png" class="mode darkImage img-decor" id="light" onclick="lightmode()" height="20px" alt="">
+        <img src="./../icons/dark-moon.png" class="mode lightImage img-decor" id="dark" onclick="darkmode()" height="20px" alt="">
 
+        <br><br>
         <img class="img"src="./../images/passport.jpg" alt="shubhangi" class="img" height="200"> 
     
     <hr />
@@ -21,8 +59,8 @@
      <li><h4>NAME : Shubhangi Santosh Pawar</h4></li>
      <li> <h4>ADDRESS : A/p. Karanjgaon, Tal.Niphad ,Dist.Nashik Pin.422210</h4></li>
      <li><h4>DOB : 20/05/2004</h4></li>
-     <li><h4>MOBILE NO. :<a href="tel:+918669858611"> 8669858611</a></h4></li>
-    <li> <h4>EMAIL ID :  <a href="mailto:shubhangi.s.pawar2007@gmail.com">shubhangi.s.pawar2007@gmail.com </a></h4></li>
+     <li><h4>MOBILE NO. :<a href="tel:+918669858611" id="decoration"> 8669858611</a></h4></li>
+    <li> <h4>EMAIL ID :  <a href="mailto:shubhangi.s.pawar2007@gmail.com" id="decoration">shubhangi.s.pawar2007@gmail.com </a></h4></li>
 </ul>
     <h2>Educational Details :</h2>
    <table border="2px">
@@ -108,13 +146,34 @@
 
     <h2>Social Media :-</h2>
     <ol>
-     <li><h4><a href="https://wa.me/8669858611"> Whatsapp</a></h4-></li>
-     <li><h4><a href="https://www.linkedin.com/in/shubhangi-pawar-467341245?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BTD9FbhlRT0C%2FVFrSpQtXxA%3D%3D">LinkedIn</a></h4></li>
-     <li><h4><a href="https://peerlist.io/shubhangipawar/posts">PeerList</a></h4></li>
+     <li><h4><a href="https://wa.me/8669858611" id="decoration"> Whatsapp</a></h4-></li>
+     <li><h4><a href="https://www.linkedin.com/in/shubhangi-pawar-467341245?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BTD9FbhlRT0C%2FVFrSpQtXxA%3D%3D" id="decoration">LinkedIn</a></h4></li>
+     <li><h4><a href="https://peerlist.io/shubhangipawar/posts" id="decoration">PeerList</a></h4></li>
     </ol>
    
     </div>  
-     
+     <script>
+       function lightmode(){
+          let lightTheme = document.getElementById("body")
+          lightTheme.className="light-theme"
+          let lightImg = document.getElementById("light")
+          lightImg.classList.add="mode"
+          let darkImg = document.getElementById("dark")
+          darkImg.classList.remove="mode"
+          
+       }
+
+
+       function darkmode(){
+        let darkTheme = document.getElementById("body")
+        darkTheme.className="dark-theme"
+        let lightImg = document.getElementById("light")
+        lightImg.classList.remove="mode"
+        let darkImg = document.getElementById("dark")
+        darkImg.classList.add="mode"
+       
+       }
+     </script>
 
 
 </body>
