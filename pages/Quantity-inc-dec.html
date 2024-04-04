@@ -6,8 +6,8 @@
     <title>Increment Decrement </title>
     <style>
         .product-container{
-            width: 300px;
-            background-color: burlywood;
+            width: 450px;
+            background-color: rgba(197, 155, 101, 0.72);
             border-radius: 20px;
             box-shadow: 0px 2px 4px 5px gray;
             display: block;
@@ -36,6 +36,28 @@
             display: block;
             margin-left: 15px;
         }
+        .quantity-container{
+            display: flex;
+            flex-direction: row;
+            
+            margin:7px 170px;
+        }
+        .minus{
+            cursor: pointer;
+        }
+        .plus{
+            cursor: pointer;
+        }
+        .total-value{
+            font-size: 25px;
+            padding-left: 40px;
+            padding-bottom: 20px;
+        }
+        .quantity-value{
+            font-size:25px;
+            margin: 0 10px;
+
+        }
         .button-buy-now{
             padding: 7px 13px;
             border-radius: 10px;
@@ -43,20 +65,60 @@
             color: white;
             display: block;
             margin: 2px auto;
-        
+            cursor: pointer;
+            margin-top: 29px;
+            border: none;
 
+        }
+        .button-buy-now:hover{
+            transform: scale(1.2);
+            box-shadow: 0 0 6px 2px black;
+            color: black;
         }
     </style>
 </head>
 <body>
     <div class="product-container">
-        <img src="./../images/laptop-table.jpg" height="250px" class="product-img" alt="">
+        <img src="./../images/laptop-table.jpg" height="250px" width="300px" class="product-img" alt="">
         <p class="product-name">Laptop Table</p>
         <p class="product-description"> Homes Table Laptop Study Bed Home Wooden Foldable Students Stand Office Computer Desk Folding Work Tables Laptops Portable (Green), 20 Centimeters, 12 Centimeters</p>
         <p class="price">₹ 298/- <del>₹ 450</del></p>
-
-        <a href="https://www.flaticon.com/free-icons/plus" title="plus icons"></a>
+         <div class="total-value">
+           <span id="quanty"> 1 </span>  X 298 = <span class="quanty-total"> 298 </span>
+         </div>
+        <div class="quantity-container">
+            <img src="./../icons/minus-button.png" alt="minus" class="minus" id="minus" height="30px" onclick="decQuantity()">
+            <span class="quantity-value" id="quantity-value"> 1 </span>
+            <img src="./../icons/plus (1).png" alt="plus" class="plus" id="plus" height="30px" onclick="incQuantity()">
+        </div>
         <button type="button" class="button-buy-now">Buy Now</button>
     </div>
+    <script>
+        function decQuantity(){
+            let decValue = document.getElementById("minus")
+            let quantityValue =document.getElementById("quantity-value")
+            let quantity= parseInt(quantityValue.innerText)
+            if(quantity!=0){
+            quantityValue.innerText = --quantity
+            }
+            else
+                  alert(`You should buy at least 1 product `)
+            
+        }
+           
+        
+        function incQuantity(){
+            let incValue = document.getElementById("minus")
+            let quantityValue =document.getElementById("quantity-value")
+           
+            let quantity= parseInt(quantityValue.innerText)
+            if(quantity<10){
+            quantityValue.innerText = ++quantity
+            }
+            else
+                  alert(`Your limit is exceed. You can't add more than 10.`)
+            
+        }
+    </script>
 </body>
 </html>
