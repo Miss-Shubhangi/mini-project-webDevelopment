@@ -7,9 +7,9 @@
     <style>
         .product-container{
             width: 450px;
-            background-color: rgba(197, 155, 101, 0.72);
+            background-color: rgba(190, 182, 170, 0.72);
             border-radius: 20px;
-            box-shadow: 0px 2px 4px 5px gray;
+            box-shadow: 5px 0px 4px 5px gray;
             display: block;
             margin: 20px auto;
             padding: 40px auto;
@@ -77,14 +77,14 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color: rgb(134, 134, 147);">
     <div class="product-container">
         <img src="./../images/laptop-table.jpg" height="250px" width="300px" class="product-img" alt="">
         <p class="product-name">Laptop Table</p>
         <p class="product-description"> Homes Table Laptop Study Bed Home Wooden Foldable Students Stand Office Computer Desk Folding Work Tables Laptops Portable (Green), 20 Centimeters, 12 Centimeters</p>
         <p class="price">₹ 298/- <del>₹ 450</del></p>
          <div class="total-value">
-           <span id="quanty"> 1 </span>  X 298 = <span class="quanty-total"> 298 </span>
+           <span id="quanty"> 1 </span>  X 298 = <span id="quantyTotal"> 298 </span>
          </div>
         <div class="quantity-container">
             <img src="./../icons/minus-button.png" alt="minus" class="minus" id="minus" height="30px" onclick="decQuantity()">
@@ -100,10 +100,14 @@
             let quantity= parseInt(quantityValue.innerText)
             if(quantity!=0){
             quantityValue.innerText = --quantity
+            quanty.innerText= `${quantity}`;
+            let totalPrice = document.getElementById("quantyTotal")
+            totalPrice.innerText =`${quantity * 298}`
             }
-            else
+            else{
                   alert(`You should buy at least 1 product `)
-            
+            }
+            setQuantity(quantity)
         }
            
         
@@ -114,10 +118,17 @@
             let quantity= parseInt(quantityValue.innerText)
             if(quantity<10){
             quantityValue.innerText = ++quantity
-            }
-            else
-                  alert(`Your limit is exceed. You can't add more than 10.`)
             
+           
+            }
+            else{
+              alert(`Your limit is exceed. You can't add more than 10.`)
+            }
+            setQuantity(quantity)
+        }
+        function setQuantity(quantity){
+            quanty.innerText= `${quantity}`;
+            quantyTotal.innerText=`${quantity * 298 }`
         }
     </script>
 </body>
