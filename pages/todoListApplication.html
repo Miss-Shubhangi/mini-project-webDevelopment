@@ -41,7 +41,25 @@
     </div>
   
 
-   
+    <script>
+
+        const TodoList = []
+        function add(){
+            let inputtxt= document.getElementById('input');
+            TodoList.push(inputtxt.value);
+            inputtxt.value="";
+            
+            RendorList()
+
+        }
+        function RendorList(){
+           let listContainer = document.getElementById("list-container")
+           listContainer.innerHTML="";
+
+    
+            
+        }
+    </script>
     
 </body>
 </html>
