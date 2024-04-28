@@ -54,8 +54,12 @@
         }
         function RendorList(){
            let listContainer = document.getElementById("list-container")
-           listContainer.innerHTML="";
-
+          
+          
+           for (const ListItems of TodoList)
+           {
+            listContainer.innerHTML=`<div class=List-Items> <input type="checkbox"/> ${ListItems} </div>`
+           }
     
             
         }
