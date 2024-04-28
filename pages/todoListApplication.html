@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To Do App</title>
 
     <style>
         .heading{
@@ -96,10 +96,20 @@ background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
 
     <script>
 
-        const TodoList = []
+        let TodoList = [];
+
+        const LocalStorageLists=localStorage.getItem("TodoList")
+        if(LocalStorageLists){
+            TodoList=JSON.parse(LocalStorageLists);
+            RendorList()
+        }
+
         function add(){
             let inputtxt= document.getElementById('input');
             TodoList.push(inputtxt.value);
+            
+            localStorage.setItem("TodoList",JSON.stringify(TodoList));
+
             inputtxt.value="";
             
             RendorList()
